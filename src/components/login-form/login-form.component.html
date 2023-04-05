@@ -1,0 +1,17 @@
+<h1>Login</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" name="email" [(ngModel)]="email" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" name="password" [(ngModel)]="password" required>
+  </div>
+  <div>
+    <button class="rounded-lg bg-purple-700" type="submit">Log In</button>
+  </div>
+</form>
+
+<p>Don't have an account yet? <a routerLink="/register">Create one now</a>.</p>

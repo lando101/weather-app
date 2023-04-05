@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@geoapify/geocoder-autocomplete/styles/minimal.css";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+// @import 'bootstrap/dist/css/bootstrap.css';
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+// @import "~bootstrap/scss/bootstrap";
+// @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+html, body { height: 100%; }
+body { margin: 0; }
+* {
+  font-family: 'Comfortaa', cursive !important;
+}
+
+
+$colors: (
+  'primary': #2563eb,
+  'secondary': #f43f5e,
+  'success': #3adb76,
+  'warning': #ffae00,
+  'info': #00d1b2,
+  'error': #ff3860,
+);
+
+$colors: (
+  'primary': #2563eb,
+  'secondary': #f43f5e,
+  'success': #3adb76,
+  'warning': #ffae00,
+  'info': #00d1b2,
+  'error': #ff3860,
+);
+
+// Define classes for all text types and colors
+@each $color, $value in $colors {
+  h1.tw-text-#{$color} {
+    color: $value;
+  }
+
+  h2.tw-text-#{$color} {
+    color: $value;
+  }
+
+  h3.tw-text-#{$color} {
+    color: $value;
+  }
+
+  h4.tw-text-#{$color} {
+    color: $value;
+  }
+
+  h5.tw-text-#{$color} {
+    color: $value;
+  }
+
+  h6.tw-text-#{$color} {
+    color: $value;
+  }
+
+  p.tw-text-#{$color} {
+    color: $value;
+  }
+
+  span.tw-text-#{$color} {
+    color: $value;
+  }
+
+  a.tw-text-#{$color} {
+    color: $value;
+    &:hover {
+      color: lighten($value, 10%);
+    }
+  }
+
+  button.tw-text-#{$color} {
+    color: $value;
+    background-color: lighten($value, 10%);
+    &:hover {
+      background-color: $value;
+      color: white;
+    }
+  }
+}
+
+
+
+// Add base styles for all text types
+h1 {
+  @apply tw-font-bold tw-text-3xl tw-tracking-tight dark:tw-text-zinc-300;
+}
+
+h2 {
+  @apply tw-font-bold tw-text-2xl tw-tracking-tight dark:tw-text-zinc-300;
+}
+
+h3 {
+  @apply tw-font-bold tw-text-xl tw-tracking-tight dark:tw-text-zinc-300;
+}
+
+h4 {
+  @apply tw-font-bold tw-text-lg tw-tracking-tight dark:tw-text-zinc-300;
+}
+
+h5 {
+  @apply tw-font-bold tw-text-base tw-tracking-tight dark:tw-text-zinc-300;
+}
+
+h6 {
+  @apply tw-font-bold tw-text-sm tw-tracking-tight dark:tw-text-zinc-300;
+}
+
+p {
+  @apply tw-text-base tw-leading-6 tw-tracking-wide dark:tw-text-zinc-300;
+}
+
+div {
+  @apply tw-text-base tw-leading-6 tw-tracking-wide dark:tw-text-zinc-300;
+}
+
+span {
+  @apply tw-text-sm tw-tracking-wider;
+}
+
+.pi{
+  font-family: 'primeicons' !important;
+}
