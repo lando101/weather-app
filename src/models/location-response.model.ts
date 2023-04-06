@@ -31,6 +31,7 @@ export interface GeoapifyResponse {
     timezone?: Timezone;
     result_type?: string;
     rank?: Rank;
+    postcode?: string;
     place_id?: string;
     name?: string;
     district?: string;

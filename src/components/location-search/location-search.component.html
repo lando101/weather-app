@@ -1,14 +1,17 @@
 <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center" class="tw-relative">
   <i class="pi pi-search tw-absolute tw-left-6 tw-text-lg"></i>
-  <input id="search" #input (keyup)="getAutocompleteResults(input.value)" class="tw-w-full tw-rounded-full tw-pl-14 tw-pr-3 tw-py-3 tw-bg-slate-200 dark:tw-bg-zinc-800 tw-placeholder-zinc-700 dark:tw-placeholder-zinc-400" type="text" id="search" name="search" [(ngModel)]="searchTerm" placeholder="Search city...">
+  <input id="search" #input (input)="searchLocations()" class="tw-w-full tw-rounded-full tw-pl-14 tw-pr-3 tw-py-3 tw-bg-slate-200 dark:tw-bg-zinc-800 tw-placeholder-zinc-700 dark:tw-placeholder-zinc-400" type="text" name="search" [(ngModel)]="searchTerm" placeholder="Search city...">
   <div *ngIf="isLoading && input.value.length>0" class="card tw-absolute tw-right-2">
     <p-progressSpinner class="tw-flex" styleClass="tw-w-6 tw-h-6" strokeWidth="8" fill="{{isDarkMode ? 'rgb(39 39 42)':'rgb(203 213 225)'}}" animationDuration=".5s"></p-progressSpinner>
   </div>
+  <div [@fadeIn] *ngIf="!isLoading && input.value.length>0" fxLayout="row" fxLayoutAlign="center center" class="card tw-absolute tw-right-3">
+    <button (click)="this.reset()"><i class="pi pi-times"></i></button>
+  </div>
   
-  <ul id="search-results" *ngIf="autocompleteResults.length>0" [@floatAnimation] class="list-group tw-absolute tw-top-12 tw-w-full tw-bg-white dark:tw-bg-zinc-800 tw-shadow-md tw-rounded-lg tw-p-2">
+  <ul id="search-results" *ngIf="autocompleteResults.length>0 && !isLoading" [@floatAnimation] class="list-group tw-absolute tw-top-12 tw-w-full tw-bg-white dark:tw-bg-zinc-800 tw-shadow-md tw-rounded-lg tw-p-2">
     <li *ngFor="let result of autocompleteResults; let i=index">
       <button (click)="goToWeatherDetails(result)" fxLayout="row" fxLayoutAlign="space-between center" class="tw-rounded-md list-group-item list-group-item-action active tw-p-2 tw-mb-1 hover:tw-bg-slate-100 hover:dark:tw-bg-zinc-700 tw-w-full tw-text-left tw-transition">
-        <span><b>{{result?.properties?.city}}</b>, {{result?.properties?.state_code}}, {{result?.properties?.country_code?.toUpperCase()}}</span>
+        <span appTextHighlight="{{input.value}}" [text]="result?.properties?.address_line1">{{result?.properties?.address_line1}}</span>
         <span class="tw-py-1 tw-px-2 tw-bg-slate-300 dark:tw-bg-zinc-900 tw-capitalize tw-rounded-md tw-text-xs">{{result?.properties?.result_type}}</span>
       </button>
     </li>

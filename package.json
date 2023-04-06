@@ -32,6 +32,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "bootstrap": "^5.2.3",
     "firebase": "^9.19.0",
+    "ng-animate": "^2.0.1",
     "primeicons": "^6.0.1",
     "primeng": "^15.3.0",
     "rxjs": "~7.8.0",
