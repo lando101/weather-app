@@ -16,6 +16,7 @@ import { PrimeNgModule } from 'src/app/primeng.module';
 import { WeatherTabsComponent } from './weather-tabs/weather-tabs.component';
 import { NextSevenDaysComponent } from './weather-components/next-seven-days/next-seven-days.component';
 import { TextHighlightDirective } from 'src/directives/text-highlight.directive';
+import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TextHighlightDirective } from 'src/directives/text-highlight.directive'
     LocationSearchComponent,
     WeatherTabsComponent,
     NextSevenDaysComponent,
-    TextHighlightDirective
+    TextHighlightDirective,
+    DarkModeToggleComponent
   ],
   imports: [
     GeoapifyGeocoderAutocompleteModule.withConfig(
@@ -52,7 +54,8 @@ import { TextHighlightDirective } from 'src/directives/text-highlight.directive'
     FlexLayoutModule,
     LocationSearchComponent,
     WeatherTabsComponent,
-    NextSevenDaysComponent
+    NextSevenDaysComponent,
+    DarkModeToggleComponent
     // NgbDropdownModule,
   ],
 })

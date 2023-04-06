@@ -32,7 +32,7 @@
         <!-- <mat-slide-toggle [checked]="isDarkMode" (change)="toggleDarkMode()">
           <mat-icon>{{ isDarkMode ? "moon" : "sun" }}</mat-icon>
         </mat-slide-toggle> -->
-        
+        <app-dark-mode-toggle></app-dark-mode-toggle>
         <div class="card flex justify-content-center">
           <p-toggleButton [(ngModel)]="isDarkMode" (onChange)="toggleDarkMode()" onIcon="pi pi-moon" offIcon="pi pi-sun" [style]="{ height: '40px', width: '40px', borderRadius: '100px' }"></p-toggleButton>
         </div>
