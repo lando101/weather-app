@@ -10,7 +10,7 @@
   
   <ul id="search-results" *ngIf="autocompleteResults.length>0 && !isLoading" [@floatAnimation] class="list-group tw-absolute tw-top-16 tw-w-full tw-bg-white dark:tw-bg-zinc-800 tw-shadow-md tw-rounded-xl tw-p-2">
     <li *ngFor="let result of autocompleteResults; let i=index">
-      <button (click)="goToWeatherDetails(result)" fxLayout="row" fxLayoutAlign="space-between center" class="tw-rounded-md list-group-item list-group-item-action active tw-p-2 tw-mb-1 hover:tw-bg-slate-100 hover:dark:tw-bg-zinc-700 tw-w-full tw-text-left tw-transition">
+      <button (click)="goToWeatherDetails(result)" fxLayout="row" fxLayoutAlign="space-between center" class="tw-rounded-lg list-group-item list-group-item-action active tw-p-2 tw-mb-1 hover:tw-bg-slate-100 hover:dark:tw-bg-zinc-700 tw-w-full tw-text-left tw-transition">
         <span appTextHighlight="{{input.value}}" [text]="result?.properties?.address_line1">{{result?.properties?.address_line1}}</span>
         <span class="tw-py-1 tw-px-2 tw-bg-slate-300 dark:tw-bg-zinc-900 tw-capitalize tw-font-medium tw-rounded-md tw-text-xs">{{result?.properties?.result_type}}</span>
       </button>
