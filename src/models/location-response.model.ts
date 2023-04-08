@@ -21,6 +21,8 @@ export interface GeoapifyResponse {
     datasource?: Datasource;
     country_code?: string;
     city?: string;
+    county?: string;
+    suburb?: string;
     lon?: number;
     lat?: number;
     state_code?: string;

@@ -16,21 +16,35 @@
   </ul>
   <ng-container #tabContent></ng-container>
 </div> -->
-
-<mat-tab-group [animationDuration]="150" #tabs fitInkBarToContent mat-stretch-tabs="false" mat-align-tabs="start">
+<ul class="tab-header" fxLayout="row" fxLayoutGap="20">
+  <button
+    #tabTitle
+    *ngFor="let tab of tabs; let i = index"
+    (click)="setActiveTab(tab)"
+    class="tw-cursor-pointer tw-font-semibold tw-rounded-lg tw-transition-all tw-px-2 tw-py-2"
+    [ngClass]="{
+      ' tw-text-zinc-50 hover:tw-bg-indigo-600 dark:hover:tw-bg-indigo-600 hover:tw-text-zinc-50 tw-bg-indigo-600 dark:tw-bg-indigo-600 dark:tw-text-zinc-200 tw-shadow-indigo-200 dark:tw-shadow-indigo-950 tw-shadow-lg':
+        selectedTab === tab,
+      'tw-text-zinc-500 hover:tw-bg-slate-200 hover:tw-text-zinc-950 hover:dark:tw-bg-zinc-800 hover:dark:tw-text-zinc-200': selectedTab !== tab
+    }"
+  >
+    {{ tab.title }}
+  </button>
+</ul>
+<mat-tab-group #tabGroup [animationDuration]="150" fitInkBarToContent mat-stretch-tabs="false" mat-align-tabs="start">
   <mat-tab #tab1>
     <ng-template mat-tab-label>
-    <span class="strd-tab" [ngClass]="{'active-tab': tab1.isActive}">Today</span>
+    <!-- <span class="strd-tab" [ngClass]="{'active-tab': tab1.isActive}">Today</span> -->
   </ng-template>
 </mat-tab>
   <mat-tab #tab2>
     <ng-template mat-tab-label>
-      <span class="strd-tab" [ngClass]="{'active-tab': tab2.isActive}">Tomorrow</span>
+      <!-- <span class="strd-tab" [ngClass]="{'active-tab': tab2.isActive}">Tomorrow</span> -->
     </ng-template>
   </mat-tab>
   <mat-tab #tab3>
     <ng-template mat-tab-label>
-      <span class="strd-tab" [ngClass]="{'active-tab': tab3.isActive}">Next 7 Days</span>
+      <!-- <span class="strd-tab" [ngClass]="{'active-tab': tab3.isActive}">Next 7 Days</span> -->
     </ng-template>
     <app-next-seven-days></app-next-seven-days></mat-tab>
 </mat-tab-group>

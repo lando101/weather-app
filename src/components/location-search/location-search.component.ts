@@ -34,6 +34,7 @@ export class LocationSearchComponent implements OnInit {
   @ViewChild('input') input: ElementRef;
   @Input() isDarkMode: boolean;
   
+  location_name: string;
   searchTerm: string;
   autocompleteResults: Feature[] = [];
   previousResponse: any = null;
@@ -57,6 +58,7 @@ export class LocationSearchComponent implements OnInit {
     switchMap((query: string) => this.locationSearch.getAutocompleteResults(query))
   ).subscribe(
     (response: any) => {
+      console.log('results', response.features);
       this.autocompleteResults = response.features;
       this.isLoading = false;
     },
@@ -160,6 +162,29 @@ searchLocations() {
   //     this.isLoading = false; // Set isLoading to false on error as well
   //   }
   // }
+
+
+  generateHeader(location: Properties|undefined){
+    let name: string;
+    let location_name: string;
+    if(location){
+      let result_type = location.result_type;
+      if(result_type === 'city'){
+        name = location.city ?? 'unknown';
+      } else if (result_type === 'county'){
+        name = location.county ?? 'unknown';
+      } else if (result_type === 'postcode') {
+        name = location.postcode ?? 'unknown';
+      } else if (result_type === 'suburb') {
+        name = location.suburb ?? 'unknown';
+      }else {
+        name = location.address_line1 ?? 'unkown'
+      }
+      return location_name = `${name} ${(location.state_code ? ', '+location.state_code:null)}`;
+    } else {
+      return location_name = 'unknown'
+    }
+  }
 
   reset(){
     this.searchLocations();

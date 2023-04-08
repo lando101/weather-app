@@ -1,0 +1,11 @@
+::ng-deep .p-togglebutton.p-button.p-highlight {
+    background: transparent;
+    border-color: transparent;
+    color: #ffffff;
+}
+
+::ng-deep .p-togglebutton.p-button.p-highlight:hover {
+    background: #ffffff1c;
+    border-color: transparent;
+    color: #ffffff;
+}

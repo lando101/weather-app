@@ -5,19 +5,23 @@
       fxLayoutAlign="space-between center"
       class="tw-py-5 tw-mb-4"
     >
-      <div fxLayout="row" fxFlex="20" fxLayoutGap="15" fxLayoutAlign="start center" class="tw-overflow-hidden tw-relative">
+      <div fxLayout="column" fxFlex="20" fxLayoutGap="4" fxLayoutAlign="center start" class="tw-overflow-hidden tw-relative">
         <a
           href="/"
-          class="d-flex align-items-center text-dark text-decoration-none"
+          fxLayout="row"
+          fxLayoutAlign="center center"
+          class="align-items-center text-dark text-decoration-none"
         >
           <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
-          <h1>Logo</h1>
+          <!-- <h1>Logo</h1> -->
+          <img class="tw-w-24" src="https://firebasestorage.googleapis.com/v0/b/weather-app-4d9b4.appspot.com/o/airflow_no_bg%20(2).png?alt=media&token=8633d867-67c9-47ad-80de-122080d7e3f3">
+          <!-- <h1 class="brand-text">Airflo</h1> -->
         </a>
-        <div class="tw-relative" fxLayout="row" fxLayoutAlign="start center">
+        <div class="tw-relative" fxLayout="column" fxLayoutAlign="start center">
           <div *ngIf="city && state; else loader" fxLayout="row" fxLayoutAlign="center center" class="tw-overflow-hidden hover:tw-text-blue-600 tw-transition-color">
             <!-- <ng-icon name="heroMapPinSolid"></ng-icon> -->
-            <i class="pi pi-map-marker"></i>
-            <button (click)="goToWeatherDetails(location)" type="link" class="tw-ml-1 tw-truncate"><span class="tw-font-bold">{{city}}</span>, {{state}}</button>
+            <!-- <i class="pi pi-map-marker"></i> -->
+            <button (click)="goToWeatherDetails(location)" type="link" class="tw-truncate"><span class="tw-font-bold tw-text-sm">{{city}}</span>, {{state}}</button>
           </div>
         </div>
       </div>
@@ -32,22 +36,31 @@
         <!-- <mat-slide-toggle [checked]="isDarkMode" (change)="toggleDarkMode()">
           <mat-icon>{{ isDarkMode ? "moon" : "sun" }}</mat-icon>
         </mat-slide-toggle> -->
-        <app-dark-mode-toggle></app-dark-mode-toggle>
-        <div class="card flex justify-content-center">
-          <p-toggleButton [(ngModel)]="isDarkMode" (onChange)="toggleDarkMode()" onIcon="pi pi-moon" offIcon="pi pi-sun" [style]="{ height: '40px', width: '40px', borderRadius: '100px' }"></p-toggleButton>
+        <!-- <app-dark-mode-toggle></app-dark-mode-toggle> -->
+        <div class="card flex justify-content-center" title="Toggle theme">
+          <p-toggleButton [(ngModel)]="isDarkMode" (onChange)="toggleDarkMode()" onIcon="pi pi-moon" offIcon="pi pi-sun" [style]="{ height: '2.5rem', width: '2.5rem', borderRadius: '100px' }"></p-toggleButton>
         </div>
          
         <!-- <div class="card flex justify-content-center">
           <p-inputSwitch [(ngModel)]="isDarkMode" (onChange)="toggleDarkMode()" ></p-inputSwitch>
         </div> -->
         <div class="dropdown text-end">
-          <button mat-button [matMenuTriggerFor]="menu">
-            <ng-icon name="heroUser"></ng-icon>
+          <button mat-button [matMenuTriggerFor]="menu" title="Profile">
+            <p-avatar label="V" styleClass="mr-2" [style]="{ 'background-color': '#2196F3', color: '#ffffff', height: '2.5rem', width: '2.5rem' }" shape="circle"></p-avatar>
           </button>
           <mat-menu #menu="matMenu">
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div>
+                <p-avatar label="V" styleClass="mr-2" [style]="{ 'background-color': '#2196F3', color: '#ffffff', height: '2.5rem', width: '2.5rem' }" shape="circle"></p-avatar>
+              </div>
+              <div>
+                <span>landon.messmerjmu@gmail.com</span>
+              </div>
+            </div>
             <button mat-menu-item>Item 1</button>
             <button mat-menu-item>Item 2</button>
           </mat-menu>
+          
           <!-- <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>

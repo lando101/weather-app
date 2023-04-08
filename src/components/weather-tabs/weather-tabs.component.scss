@@ -5,3 +5,7 @@
 .strd-tab {
     @apply tw-text-base tw-cursor-pointer tw-rounded-lg hover:tw-bg-slate-200 hover:tw-text-zinc-950 hover:dark:tw-bg-zinc-800 hover:dark:tw-text-zinc-200 tw-transition-all tw-px-2 tw-py-2;
 }
+
+::ng-deep .mat-mdc-tab-header{
+    display: none !important;
+}
