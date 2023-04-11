@@ -1,22 +1,23 @@
 
 
   <div fxLayout="column" fxLayoutGap="16" *ngIf="!reset">
-    <div class="tw-bg-zinc-50 dark:tw-bg-zinc-800 tw-backdrop-blur-lg tw-sticky tw-top-0 tw-z-10">
-      <h1 class="tw-te" *ngIf="location && location.result_type">{{location.formatted?.replace(", United States of America", "")}}</h1>
-      <p *ngIf="time" class="tw-font-semibold tw-text-zinc-700 dark:tw-text-zinc-400" fxLayout="row" fxLayoutGap="8">
-        <span>{{location?.country}}</span>
-        <span>/</span>
-        <span class="tw-relative" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10">
-          <span class="tw-relative flex tw-h-2 tw-w-2 tw-flex tw-align-middle">
-            <span class="dot-pulse-animation tw-absolute tw-inline-flex tw-h-full tw-w-full tw-rounded-full tw-bg-emerald-400	"></span>
-            <span class="tw-relative tw-inline-flex tw-rounded-full tw-h-2 tw-w-2 tw-bg-emerald-500	"></span>
-          </span>
-          <span>{{time}}</span>
-        </span>
-      </p>
-    </div>
+
   <section fxLayout.gt-md="row" fxLayout.lt-lg="column" fxLayoutGap="60">
-    <div fxLayout="column" fxFlex="auto">
+    <div fxLayout="column" fxFlex="auto" fxLayoutGap="24">
+      <div class="tw-z-10 tw-py-2">
+        <h1 class="tw-mb-1" *ngIf="location && location.result_type">{{location.formatted?.replace(", United States of America", "")}}</h1>
+        <p *ngIf="time" class="tw-font-semibold tw-text-zinc-700 dark:tw-text-zinc-400" fxLayout="row" fxLayoutGap="8">
+          <span>{{location?.country}}</span>
+          <span>/</span>
+          <span class="tw-relative" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10">
+            <span class="tw-relative flex tw-h-2 tw-w-2 tw-flex tw-align-middle">
+              <span class="dot-pulse-animation tw-absolute tw-inline-flex tw-h-full tw-w-full tw-rounded-full tw-bg-emerald-400	"></span>
+              <span class="tw-relative tw-inline-flex tw-rounded-full tw-h-2 tw-w-2 tw-bg-emerald-500	"></span>
+            </span>
+            <span>{{time}}</span>
+          </span>
+        </p>
+      </div>
       <app-weather-tabs [tabs]="tabs"></app-weather-tabs>
       <!-- <p *ngIf="location">{{json}}</p> -->
     </div>
