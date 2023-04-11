@@ -17,6 +17,12 @@ import { WeatherTabsComponent } from './weather-tabs/weather-tabs.component';
 import { NextSevenDaysComponent } from './weather-components/next-seven-days/next-seven-days.component';
 import { TextHighlightDirective } from 'src/directives/text-highlight.directive';
 import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.component';
+import { WeatherCarouselComponent } from './weather-components/weather-carousel/weather-carousel.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { DragScrollModule } from 'ngx-drag-scroll';
+import { NgxSplideModule } from 'ngx-splide';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +33,8 @@ import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.com
     WeatherTabsComponent,
     NextSevenDaysComponent,
     TextHighlightDirective,
-    DarkModeToggleComponent
+    DarkModeToggleComponent,
+    WeatherCarouselComponent
   ],
   imports: [
     GeoapifyGeocoderAutocompleteModule.withConfig(
@@ -41,7 +48,11 @@ import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.com
     MaterialModule,
     IconsModule,
     FlexLayoutModule,
-    PrimeNgModule
+    PrimeNgModule,
+    CarouselModule,
+    SlickCarouselModule,
+    DragScrollModule,
+    NgxSplideModule
     // NgbDropdownModule,
   ],
   exports: [
@@ -55,7 +66,8 @@ import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.com
     LocationSearchComponent,
     WeatherTabsComponent,
     NextSevenDaysComponent,
-    DarkModeToggleComponent
+    DarkModeToggleComponent,
+    WeatherCarouselComponent
     // NgbDropdownModule,
   ],
 })

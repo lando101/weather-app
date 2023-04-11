@@ -23,6 +23,8 @@ export class WeatherDetailsComponent implements OnInit, OnDestroy {
   json: string;
   routeSub: any;
   time: string | undefined;
+  reset: boolean;
+
 
   tabs = [
     {
@@ -62,6 +64,7 @@ export class WeatherDetailsComponent implements OnInit, OnDestroy {
       
       console.log('params', params);
       console.log(location);
+      this.reset = true;
       this.resetComponent(lat, lon, location);
 
       setInterval(() => {
@@ -109,7 +112,12 @@ export class WeatherDetailsComponent implements OnInit, OnDestroy {
     this.weatherService.getWeather(this.lat, this.lon, '', units).subscribe(data => {
       this.weather = data;
       console.log('weather', this.weather)
+    }).add(()=>{
+      this.reset = false;
+
     });
+    // setTimeout(() => {
+    // }, 500);
   }
 
 }

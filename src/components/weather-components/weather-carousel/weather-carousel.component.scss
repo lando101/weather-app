@@ -1,0 +1,14 @@
+drag-scroll {
+    height: 50px;
+    width: 100px
+  };
+
+  img {
+    height: 50px;
+    width: 50px
+  }
+
+  ::ng-deep .splide__list {
+    padding: 20px 0px !important;
+    align-items: center !important;
+  }

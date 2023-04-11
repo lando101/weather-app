@@ -15,7 +15,7 @@ export class WeatherTabsComponent implements OnInit {
   @ViewChild('tabContent', { read: ViewContainerRef, static: true }) tabContent!: ViewContainerRef;
   @ViewChild('tabGroup') tabGrp: MatTabGroup;
   selectedTab?: Tab;
-
+  
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {

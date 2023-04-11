@@ -1,0 +1,56 @@
+<div #dragContainer class="tw-w-full">
+  Hourly forecast
+  <!-- <div *ngIf="width">
+    <div [ngStyle]="{ width: width + 'px' }">
+      <splide [options]="options">
+        <splide-slide *ngFor="let slide of slides">
+          <div class="tw-overflow-visible">
+            <button
+              (click)="active = slide.title"
+              [ngClass]="{
+                'tw-w-96 tw-h-56': slide.title === active,
+                'tw-w-32 tw-h-52 hover:tw-h-56 hover:tw-shadow-md':
+                  slide.title !== active
+              }"
+              class="tw-transition-all  tw-bg-zinc-200 dark:tw-bg-zinc-800 tw-rounded-3xl"
+            >
+              {{ slide.title }}
+            </button>
+          </div>
+        </splide-slide>
+      </splide>
+    </div>
+    <div>
+      <button (click)="next()">next</button>
+    </div>
+  </div> -->
+</div>
+<section class="splide" aria-labelledby="carousel-heading">
+  <!-- <h2 id="carousel-heading">Splide Basic HTML Example</h2> -->
+  <div [ngStyle]="{ width: width + 'px' }">
+  <div class="splide__track">
+		<ul class="splide__list">
+			<li *ngFor="let slide of slides" class="splide__slide">
+        <button
+        (click)="active = slide.title"
+        [ngClass]="{
+          'tw-w-96 tw-h-56': slide.title === active,
+          'tw-w-32 tw-h-52 hover:tw-h-56 hover:tw-shadow-md':
+            slide.title !== active
+        }"
+        class="tw-transition-all  tw-bg-zinc-200 dark:tw-bg-zinc-800 tw-rounded-3xl"
+      >
+        {{ slide.title }}
+      </button>
+      </li>
+			<!-- <li class="splide__slide">Slide 02</li>
+			<li class="splide__slide">Slide 03</li> -->
+		</ul>
+  </div>
+  </div>
+  <div>
+    <button [disabled]="nextDisabled" (click)="next()">next</button>
+    <button [disabled]="prevDisabled" (click)="prev()">prev</button>
+
+  </div>
+</section>
