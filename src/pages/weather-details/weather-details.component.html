@@ -1,7 +1,7 @@
 
 
   <div fxLayout="column" fxLayoutGap="16" *ngIf="!reset">
-    <div>
+    <div class="tw-bg-zinc-50 dark:tw-bg-zinc-800 tw-backdrop-blur-lg tw-sticky tw-top-0 tw-z-10">
       <h1 class="tw-te" *ngIf="location && location.result_type">{{location.formatted?.replace(", United States of America", "")}}</h1>
       <p *ngIf="time" class="tw-font-semibold tw-text-zinc-700 dark:tw-text-zinc-400" fxLayout="row" fxLayoutGap="8">
         <span>{{location?.country}}</span>
@@ -15,7 +15,7 @@
         </span>
       </p>
     </div>
-  <section fxLayout.gt-md="row" fxLayout.lt-lg="column">
+  <section fxLayout.gt-md="row" fxLayout.lt-lg="column" fxLayoutGap="60">
     <div fxLayout="column" fxFlex="auto">
       <app-weather-tabs [tabs]="tabs"></app-weather-tabs>
       <!-- <p *ngIf="location">{{json}}</p> -->

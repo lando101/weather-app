@@ -23,11 +23,11 @@ export class ThemeService {
 
   public toggleTheme(enabled: boolean) {
     // Toggle the dark mode class on the body element
-    const body = document.getElementsByTagName('body')[0];
+    const html = document.getElementsByTagName('html')[0];
     if (enabled) {
-      body.classList.add('tw-dark');
+      html.classList.add('tw-dark');
     } else {
-      body.classList.remove('tw-dark');
+      html.classList.remove('tw-dark');
     }
     // Toggle the theme flag and update the cache
     this.isDarkModeEnabled = enabled;

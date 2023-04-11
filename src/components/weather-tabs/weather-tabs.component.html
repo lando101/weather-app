@@ -36,7 +36,24 @@
     <ng-template mat-tab-label>
     <!-- <span class="strd-tab" [ngClass]="{'active-tab': tab1.isActive}">Today</span> -->
   </ng-template>
-  <app-weather-carousel></app-weather-carousel>
+  <div fxLayout="column" fxLayoutGap="70" class="tw-py-10">
+    <app-weather-carousel></app-weather-carousel>
+    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" class="tw-w-full" fxLayoutGap="40" [ngClass.gt-sm]="'tw-h-80'">
+    <div fxFlex="auto">
+      <div class="tw-w-full tw-h-full tw-rounded-xl dark:tw-bg-zinc-800 tw-bg-zinc-200">
+        test
+      </div>
+    </div>
+      <div fxFlex.gt-sm="360px" fxFlex.lt-md="auto" [ngClass.lt-md]="'tw-h-72'">
+        <div class="tw-grid  tw-gap-4 tw-h-full" [ngClass.gt-sm]="'tw-grid-cols-2'" [ngClass.lt-md]="'tw-grid-cols-4'" [ngClass.lt-sm]="'tw-grid-cols-2'" [ngClass.lt-sm]="'tw-grid-cols-2'">
+          <div class="tw-w-full tw-h-full tw-rounded-xl dark:tw-bg-zinc-800 tw-bg-zinc-200">test</div>
+          <div class="tw-w-full tw-h-full tw-rounded-xl dark:tw-bg-zinc-800 tw-bg-zinc-200">test</div>
+          <div class="tw-w-full tw-h-full tw-rounded-xl dark:tw-bg-zinc-800 tw-bg-zinc-200">test</div>
+          <div class="tw-w-full tw-h-full tw-rounded-xl dark:tw-bg-zinc-800 tw-bg-zinc-200">test</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </mat-tab>
   <mat-tab #tab2>

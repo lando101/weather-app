@@ -21,7 +21,7 @@
           <div *ngIf="city && state; else loader" fxLayout="row" fxLayoutAlign="center center" class="tw-overflow-hidden hover:tw-text-blue-600 tw-transition-color">
             <!-- <ng-icon name="heroMapPinSolid"></ng-icon> -->
             <!-- <i class="pi pi-map-marker"></i> -->
-            <button (click)="goToWeatherDetails(location)" type="link" class="tw-truncate"><span class="tw-font-bold tw-text-sm">{{city}}</span>, {{state}}</button>
+            <button (click)="goToWeatherDetails(location)" type="link" class="tw-truncate tw-p-0"><span class="tw-font-bold tw-text-sm">{{city}}</span>, {{state}}</button>
           </div>
         </div>
       </div>

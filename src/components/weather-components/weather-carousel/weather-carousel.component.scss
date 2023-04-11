@@ -8,6 +8,14 @@ drag-scroll {
     width: 50px
   }
 
+  .right-bumper{
+    background-image: linear-gradient(270deg, #f8fafc, transparent);
+  }
+
+  .left-bumper{
+    background-image: linear-gradient(90deg, #f8fafc, transparent);
+  }
+
   ::ng-deep .splide__list {
     padding: 20px 0px !important;
     align-items: center !important;
