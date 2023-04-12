@@ -25,7 +25,7 @@
     [ngClass]="{
       ' tw-text-zinc-50 hover:tw-bg-indigo-600 dark:hover:tw-bg-indigo-600 hover:tw-text-zinc-50 tw-bg-indigo-600 dark:tw-bg-indigo-600 dark:tw-text-zinc-200 tw-shadow-indigo-200 dark:tw-shadow-indigo-950 tw-shadow-lg':
         selectedTab === tab,
-      'tw-text-zinc-500 hover:tw-bg-slate-200 hover:tw-text-zinc-950 hover:dark:tw-bg-zinc-900 hover:dark:tw-text-zinc-200': selectedTab !== tab
+      'tw-text-zinc-500 hover:tw-bg-zinc-300 hover:tw-text-zinc-950 hover:dark:tw-bg-zinc-900 hover:dark:tw-text-zinc-200': selectedTab !== tab
     }"
   >
     {{ tab.title }}
@@ -40,16 +40,16 @@
     <app-weather-carousel></app-weather-carousel>
     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" class="tw-w-full" fxLayoutGap="40" [ngClass.gt-sm]="'tw-h-80'">
     <div fxFlex="auto">
-      <div class="tw-w-full tw-h-full tw-rounded-xl dark:tw-bg-zinc-800 tw-bg-zinc-200">
+      <div class="tw-w-full tw-h-full tw-rounded-2xl dark:tw-bg-zinc-800 tw-bg-zinc-100 tw-p-3">
         test
       </div>
     </div>
       <div fxFlex.gt-sm="360px" fxFlex.lt-md="auto" [ngClass.lt-md]="'tw-h-72'">
         <div class="tw-grid  tw-gap-4 tw-h-full" [ngClass.gt-sm]="'tw-grid-cols-2'" [ngClass.lt-md]="'tw-grid-cols-4'" [ngClass.lt-sm]="'tw-grid-cols-2'" [ngClass.lt-sm]="'tw-grid-cols-2'">
-          <div class="tw-w-full tw-h-full tw-rounded-xl dark:tw-bg-zinc-800 tw-bg-zinc-200">test</div>
-          <div class="tw-w-full tw-h-full tw-rounded-xl dark:tw-bg-zinc-800 tw-bg-zinc-200">test</div>
-          <div class="tw-w-full tw-h-full tw-rounded-xl dark:tw-bg-zinc-800 tw-bg-zinc-200">test</div>
-          <div class="tw-w-full tw-h-full tw-rounded-xl dark:tw-bg-zinc-800 tw-bg-zinc-200">test</div>
+          <div class="tw-w-full tw-h-full tw-rounded-2xl dark:tw-bg-zinc-800 tw-bg-zinc-100 tw-p-3">test</div>
+          <div class="tw-w-full tw-h-full tw-rounded-2xl dark:tw-bg-zinc-800 tw-bg-zinc-100 tw-p-3">test</div>
+          <div class="tw-w-full tw-h-full tw-rounded-2xl dark:tw-bg-zinc-800 tw-bg-zinc-100 tw-p-3">test</div>
+          <div class="tw-w-full tw-h-full tw-rounded-2xl dark:tw-bg-zinc-800 tw-bg-zinc-100 tw-p-3">test</div>
         </div>
       </div>
     </div>

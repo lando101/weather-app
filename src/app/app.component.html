@@ -1,10 +1,8 @@
-<div class="tw-bg-slate-50 dark:tw-bg-zinc-900 tw-h-full">
-    <div class="tw-container tw-mx-auto" [ngClass.gt-md]="'tw-px-16'" [ngClass.lt-lg]="'tw-px-4'"> 
-        <div *ngIf="router.url !== '/login' && router.url !== '/register'">
-            <app-header></app-header>
-        </div>
-        <router-outlet></router-outlet>
+<div class="tw-h-full">
+    <div *ngIf="router.url !== '/login' && router.url !== '/register'" class="tw-px-10 tw-sticky tw-top-0 tw-z-30 tw-bg-zinc-100 dark:tw-bg-zinc-800 dark:tw-border-zinc-700 tw-border-b tw-border">
+        <app-header></app-header>
     </div>
+    <router-outlet></router-outlet>
 </div>
 
 

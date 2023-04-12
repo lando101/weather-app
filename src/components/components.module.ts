@@ -22,6 +22,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { NgxSplideModule } from 'ngx-splide';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { LargeCitiesComponent } from './large-cities/large-cities.component';
+import { WeatherLargeComponent } from './weather-components/weather-large/weather-large.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { NgxSplideModule } from 'ngx-splide';
     NextSevenDaysComponent,
     TextHighlightDirective,
     DarkModeToggleComponent,
-    WeatherCarouselComponent
+    WeatherCarouselComponent,
+    FavoritesComponent,
+    LargeCitiesComponent,
+    WeatherLargeComponent
   ],
   imports: [
     GeoapifyGeocoderAutocompleteModule.withConfig(
@@ -52,7 +58,7 @@ import { NgxSplideModule } from 'ngx-splide';
     CarouselModule,
     SlickCarouselModule,
     DragScrollModule,
-    NgxSplideModule
+    NgxSplideModule,
     // NgbDropdownModule,
   ],
   exports: [
@@ -67,7 +73,10 @@ import { NgxSplideModule } from 'ngx-splide';
     WeatherTabsComponent,
     NextSevenDaysComponent,
     DarkModeToggleComponent,
-    WeatherCarouselComponent
+    WeatherCarouselComponent,
+    FavoritesComponent,
+    LargeCitiesComponent,
+    WeatherLargeComponent
     // NgbDropdownModule,
   ],
 })

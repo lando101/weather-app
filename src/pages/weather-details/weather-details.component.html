@@ -1,29 +1,34 @@
 
 
-  <div fxLayout="column" fxLayoutGap="16" *ngIf="!reset">
 
-  <section fxLayout.gt-md="row" fxLayout.lt-lg="column" fxLayoutGap="60">
-    <div fxLayout="column" fxFlex="auto" fxLayoutGap="24">
-      <div class="tw-z-10 tw-py-2">
-        <h1 class="tw-mb-1" *ngIf="location && location.result_type">{{location.formatted?.replace(", United States of America", "")}}</h1>
-        <p *ngIf="time" class="tw-font-semibold tw-text-zinc-700 dark:tw-text-zinc-400" fxLayout="row" fxLayoutGap="8">
-          <span>{{location?.country}}</span>
-          <span>/</span>
-          <span class="tw-relative" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10">
-            <span class="tw-relative flex tw-h-2 tw-w-2 tw-flex tw-align-middle">
-              <span class="dot-pulse-animation tw-absolute tw-inline-flex tw-h-full tw-w-full tw-rounded-full tw-bg-emerald-400	"></span>
-              <span class="tw-relative tw-inline-flex tw-rounded-full tw-h-2 tw-w-2 tw-bg-emerald-500	"></span>
+  <div class="tw-container tw-mx-auto tw-px-3 tw-py-5 tw-mt-4">
+    <section fxLayout.gt-md="row" fxLayout.lt-sm="column" fxLayoutGap.gt-md="60" *ngIf="!reset">
+      <div fxLayout="column" fxFlex.gt-md="70" fxFlex.lt-sm="100" fxLayoutGap="24">
+        <div class="tw-z-10 tw-pb-2">
+          <h1 class="tw-mb-1" *ngIf="location && location.result_type">{{location.formatted?.replace(", United States of America", "")}}</h1>
+          <p *ngIf="time" class="tw-font-semibold tw-text-zinc-700 dark:tw-text-zinc-400" fxLayout="row" fxLayoutGap="8">
+            <span>{{location?.country}}</span>
+            <span>/</span>
+            <span class="tw-relative" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10">
+              <span class="tw-relative flex tw-h-2 tw-w-2 tw-flex tw-align-middle">
+                <span class="dot-pulse-animation tw-absolute tw-inline-flex tw-h-full tw-w-full tw-rounded-full tw-bg-emerald-400	"></span>
+                <span class="tw-relative tw-inline-flex tw-rounded-full tw-h-2 tw-w-2 tw-bg-emerald-500	"></span>
+              </span>
+              <span>{{time}}</span>
             </span>
-            <span>{{time}}</span>
-          </span>
-        </p>
+          </p>
+        </div>
+        <app-weather-tabs [tabs]="tabs"></app-weather-tabs>
+        <!-- <p *ngIf="location">{{json}}</p> -->
       </div>
-      <app-weather-tabs [tabs]="tabs"></app-weather-tabs>
-      <!-- <p *ngIf="location">{{json}}</p> -->
-    </div>
-    <div fxLayou="column" fxFlex="350px">test</div>
-  </section>
+      <div class="tw-sticky tw-top-8 tw-mx-auto" fxLayout="column" fxFlex.gt-md="30" ngClass.gt-sm="tw-max-w-xs" ngClass.lt-lg="tw-hidden" fxLayoutGap="60">
+        <app-favorites></app-favorites>
+        <app-large-cities></app-large-cities>
+      </div>
+    </section>
   </div>
+
+
 
 
 

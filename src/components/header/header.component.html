@@ -2,27 +2,28 @@
     <div
       fxLayout="row"
       fxLayoutAlign="space-between center"
-      class="tw-py-5 tw-mb-1"
+      class="tw-py-1"
     >
       <div fxLayout="column" fxFlex="20" fxLayoutGap="4" fxLayoutAlign="center start" class="tw-overflow-hidden tw-relative">
         <a
           href="/"
           fxLayout="row"
           fxLayoutAlign="center center"
-          class="align-items-center text-dark text-decoration-none"
+          class="align-items-center text-dark text-decoration-none tw-mb-1"
         >
           <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
           <!-- <h1>Logo</h1> -->
-          <img class="tw-w-24" src="https://firebasestorage.googleapis.com/v0/b/weather-app-4d9b4.appspot.com/o/airflow_no_bg%20(2).png?alt=media&token=8633d867-67c9-47ad-80de-122080d7e3f3">
+          <img class="tw-w-32" src="https://firebasestorage.googleapis.com/v0/b/weather-app-4d9b4.appspot.com/o/airflo%20(1).png?alt=media&token=e638d674-0ff7-4a9e-8256-207d457ab164">
           <!-- <h1 class="brand-text">Airflo</h1> -->
         </a>
-        <div class="tw-relative" fxLayout="column" fxLayoutAlign="start center">
-          <div *ngIf="city && state; else loader" fxLayout="row" fxLayoutAlign="center center" class="tw-overflow-hidden hover:tw-text-blue-600 tw-transition-color">
-            <!-- <ng-icon name="heroMapPinSolid"></ng-icon> -->
-            <!-- <i class="pi pi-map-marker"></i> -->
-            <button (click)="goToWeatherDetails(location)" type="link" class="tw-truncate tw-p-0"><span class="tw-font-bold tw-text-sm">{{city}}</span>, {{state}}</button>
+        <!-- <div class="tw-relative" fxLayout="column" fxLayoutAlign="start center">
+          <div *ngIf="city && state; else loader" fxLayout="row" fxLayoutAlign="center center" class="tw-overflow-hidden  tw-transition-color">
+            <button (click)="goToWeatherDetails(location)" type="link" class="tw-truncate tw-p-0 tw-text-xs tw-text-zinc-800 dark:tw-text-zinc-400 hover:tw-text-blue-600">
+              <i class="pi pi-map-marker tw-text-xs tw-mr-1"></i>
+              <span class="tw-font-bold tw-text-xs">{{city}}, {{state}}</span>
+              </button>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <ng-template #loader>
@@ -30,8 +31,8 @@
           <p-progressSpinner class="tw-flex" styleClass="tw-w-4 tw-h-4 tw-bg-transparent" strokeWidth="8" fill="{{isDarkMode ? 'rgb(24 24 27)':'#ffff'}}" animationDuration=".5s"></p-progressSpinner>
         </div>
       </ng-template>
-      <app-location-search [isDarkMode]="isDarkMode" fxFlex="55"></app-location-search>
-      <div fxLayout="row" fxLayoutGap="15" fxFlex="15" fxLayoutAlign="end center">
+      <app-location-search [isDarkMode]="isDarkMode" fxFlex="40"></app-location-search>
+      <div fxLayout="row" fxLayoutGap="6" fxFlex="15" fxLayoutAlign="end center">
         <!-- <mat-slide-toggle [checked]="isDarkMode" (change)="toggleDarkMode()">
           <mat-icon>{{ isDarkMode ? "moon" : "sun" }}</mat-icon>
         </mat-slide-toggle> -->
