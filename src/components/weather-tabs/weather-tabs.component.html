@@ -1,21 +1,4 @@
-<!-- <div class="tabs">
-  <ul class="tab-header" fxLayout="row" fxLayoutGap="16">
-    <button
-      #tabTitle
-      *ngFor="let tab of tabs; let i = index"
-      (click)="selectTab(tab)"
-      class="tw-cursor-pointer tw-rounded-lg hover:tw-bg-slate-200 hover:tw-text-zinc-950 hover:dark:tw-bg-zinc-800 hover:dark:tw-text-zinc-200 tw-transition-all tw-px-2 tw-py-2"
-      [ngClass]="{
-        'tw-font-bold tw-text-zinc-50 hover:tw-bg-indigo-600 dark:hover:tw-bg-indigo-600 hover:tw-text-zinc-50 tw-bg-indigo-600 dark:tw-bg-indigo-600 dark:tw-text-zinc-200 tw-shadow-indigo-200 dark:tw-shadow-indigo-950 tw-shadow-lg':
-          selectedTab === tab,
-        'tw-text-zinc-500': selectedTab !== tab
-      }"
-    >
-      {{ tab.title }}
-    </button>
-  </ul>
-  <ng-container #tabContent></ng-container>
-</div> -->
+
 <ul class="tab-header" fxLayout="row" fxLayoutGap="20">
   <button
     #tabTitle
@@ -37,6 +20,11 @@
     <!-- <span class="strd-tab" [ngClass]="{'active-tab': tab1.isActive}">Today</span> -->
   </ng-template>
   <div fxLayout="column" fxLayoutGap="70" class="tw-py-10">
+    <div
+    class="tw-bg-zinc-100 dark:tw-bg-zinc-800 tw-rounded-3xl tw-w-full tw-h-80"
+  >
+    <app-weather-large></app-weather-large>
+  </div>
     <app-weather-carousel></app-weather-carousel>
     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" class="tw-w-full" fxLayoutGap="40" [ngClass.gt-sm]="'tw-h-80'">
     <div fxFlex="auto">

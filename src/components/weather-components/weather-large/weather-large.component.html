@@ -1,17 +1,43 @@
-
-<div fxLayout.gt-sm="row" fxLayout.lt-md="column" class=" tw-px-5 tw-py-3">
-  <div fxFlex="50" fxLayout="column">
-    <h4>Current conditions</h4>
-    <div fxLayout="row" fxLayoutAlign="start center">
-      <div class="tw-text-left">
-        <span class="tw-text-8xl tw-font-bold tw-relative tw-flex tw-align-top">71<span class="tw-text-6xl">°</span></span>
-      </div>
-     <div>
-      </div>
-      <img class="tw-w-36" src="https://firebasestorage.googleapis.com/v0/b/weather-app-4d9b4.appspot.com/o/3d-icons%2FSunny%20%2B%20Heavy%20Rain.png?alt=media&token=93d65fb6-30d9-40e1-b701-6bb29bb1789e">
+<div fxLayout.gt-sm="row" fxLayout.lt-md="column" class="tw-py-5 tw-px-6" fxLayoutGap="20">
+  <div fxFlex="35" fxLayout="column" fxLayoutGap="20">
+    <div>
+      <h3>Harrisonburg, VA</h3>
+      <span class="tw-font-medium tw-text-sm tw-text-zinc-700 dark:tw-text-zinc-400">Currently experiencing thunder storms.</span>
     </div>
-    <p class="tw-font-bold tw-text-sm tw-text-zinc-700">Currently experiencing heavy rain</p>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <img
+      class="tw-w-36"
+      src="https://firebasestorage.googleapis.com/v0/b/weather-app-4d9b4.appspot.com/o/3d-icons%2FSunny%20%2B%20Heavy%20Rain.png?alt=media&token=93d65fb6-30d9-40e1-b701-6bb29bb1789e"
+    />
+    <div fxLayout="column">
+      <div class="tw-text-left">
+        <span class="tw-text-8xl tw-font-bold tw-relative tw-flex tw-align-top"
+          >71<span class="tw-text-8xl tw-text-zinc-400 tw-font-light">°</span></span
+        >
+        <span class="tw-font-semibold tw-text-zinc-700 dark:tw-text-zinc-400">Thunder storms</span>
+      </div>
+    </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="tw-w-full" fxLayout="row wrap" fxLayoutAlign="space-between center">
+        <div matTooltip="Chance of rain" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="4">
+          <img class="svg-icon tw-w-6" src="/assets/weather-icons/umbrella.svg">
+          <span class="tw-font-semibold tw-text-sm tw-cursor-default">100%</span>
+        </div>
+        <div matTooltip="Wind speed" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="4">
+          <img class="tw-w-6 svg-icon" src="/assets/weather-icons/wind.svg">
+          <span class="tw-font-semibold tw-text-sm tw-cursor-default">5 mp/h</span>
+        </div>
+        <div matTooltip="Cloud coverage" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="4">
+          <img class="tw-w-6 svg-icon" src="/assets/weather-icons/cloud.svg">
+          <span class="tw-font-semibold tw-text-sm tw-cursor-default">73%</span>
+        </div>
+        <div matTooltip="UV index" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="4">
+          <img class="tw-w-6 svg-icon" src="/assets/weather-icons/sun.svg">
+          <span class="tw-font-semibold tw-text-sm tw-cursor-default">6.91 of 10</span>
+        </div>
+      </div>
+    </div>
   </div>
-  <div fxFlex="50">test</div>
+  <div fxFlex="65">test</div>
 </div>
-

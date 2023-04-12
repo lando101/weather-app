@@ -1,11 +1,8 @@
 <div #dragContainer class="tw-w-full" fxLayout="column" fxLayoutGap="30">
-  <h3>Hourly forecast</h3>
   <div fxLayout="column" fxLayoutGap="20">
     <div fxLayout="column" fxLayoutGap="10">
-      <div class="tw-bg-zinc-100 dark:tw-bg-zinc-800 tw-rounded-3xl tw-w-full tw-h-80">
-        <app-weather-large></app-weather-large>
-      </div>
       <section class="splide" aria-labelledby="carousel-heading">
+        <h5>Hourly forecast</h5>
         <div [ngStyle]="{ width: width + 'px' }">
           <div class="splide__track tw-relative">
             <div
@@ -13,19 +10,14 @@
               class="tw-absolute tw-right-0 tw-h-full tw-w-12 tw-z-10 tw-bg-gradient-to-l tw-from-zinc-200 dark:tw-from-zinc-900 tw-to-transparent"
             ></div>
             <div
-            *ngIf="!prevDisabled"
-            class="tw-absolute tw-left-0 tw-h-full tw-w-8 tw-z-10 tw-bg-gradient-to-r tw-from-zinc-200 dark:tw-from-zinc-900 tw-to-transparent"
-          ></div>
+              *ngIf="!prevDisabled"
+              class="tw-absolute tw-left-0 tw-h-full tw-w-8 tw-z-10 tw-bg-gradient-to-r tw-from-zinc-200 dark:tw-from-zinc-900 tw-to-transparent"
+            ></div>
             <ul class="splide__list">
               <li *ngFor="let slide of slides" class="splide__slide">
                 <button
                   (click)="active = slide.title"
-                  [ngClass]="{
-                    'tw-h-40 tw-shadow-md': slide.title === active,
-                    'tw-h-36 hover:tw-h-40 hover:tw-shadow-md':
-                      slide.title !== active
-                  }"
-                  class="tw-transition-all tw-bg-zinc-100 dark:tw-bg-zinc-800 tw-rounded-3xl tw-w-32"
+                  class="tw-h-36 hover:tw-shadow-md tw-transition-all tw-bg-zinc-100 dark:tw-bg-zinc-800 tw-rounded-3xl tw-w-32"
                 >
                   {{ slide.title }}
                 </button>
@@ -36,21 +28,18 @@
       </section>
     </div>
 
-      <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="center center">
-        <button class="primary-btn" [disabled]="prevDisabled" (click)="prev()">
-          back
-        </button>
-        <button class="primary-btn" [disabled]="nextDisabled" (click)="next()">
-          next
-        </button>
-      </div>
+    <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="center center">
+      <button class="primary-btn" [disabled]="prevDisabled" (click)="prev()">
+        back
+      </button>
+      <button class="primary-btn" [disabled]="nextDisabled" (click)="next()">
+        next
+      </button>
+    </div>
   </div>
 </div>
 
-
-
-
-      <!-- <div [ngStyle]="{ width: width + 'px' }">
+<!-- <div [ngStyle]="{ width: width + 'px' }">
         <div class="splide__track tw-relative">
           <div
             *ngIf="!nextDisabled"
